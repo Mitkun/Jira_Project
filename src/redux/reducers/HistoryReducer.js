@@ -11,7 +11,7 @@ export const HistoryReducer = (state = historyState, action) => {
       case ADD_HISTORY: {
          state.history = action.history;
          return { ...state }
-      }
+      };
       default: return { ...state }
    }
 }

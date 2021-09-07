@@ -4,6 +4,8 @@ import { withFormik } from 'formik';
 import * as Yup from 'yup';
 import { connect, useSelector, useDispatch } from 'react-redux';
 import { GET_ALL_PROJECT_CATEGORY_SAGA } from '../../redux/constants/JiraConst';
+import { GET_LIST_PROJECT, GET_LIST_PROJECT_SAGA } from '../../redux/constants/ProjectJiraConst';
+import { CREATE_PROJECT_SAGA } from '../../redux/constants/ProjectConst';
 
 function CreateProject(props) {
 
@@ -35,9 +37,9 @@ function CreateProject(props) {
    }
 
    return (
-      <div className="container m-5">
-         <h3>Create Project</h3>
-         <form className="container" onSubmit={handleSubmit} onChange={handleChange}>
+      <div className="container-fluid m-5">
+         <h3 className="mt-5">Create Project</h3>
+         <form className="container-fluid" onSubmit={handleSubmit} onChange={handleChange}>
             <div className="form-group">
                <p>Name</p>
                <input className="form-control" name="projectName" />
@@ -57,16 +59,18 @@ function CreateProject(props) {
                         'insertdatetime media table paste wordcount'
                      ],
                      toolbar:
-                        'undo redo | formatselect | bold italic | \
-                        alignleft aligncenter alignright | \
-                        bullist numlist outdent indent | help'
+                        'undo redo | formatselect | ' +
+                        'bold italic backcolor | alignleft aligncenter ' +
+                        'alignright alignjustify | bullist numlist outdent indent | ' +
+                        'removeformat | help'
                   }}
+
                   onEditorChange={handleEditorChange}
                />
             </div>
             <div className="form-group">
                <select name="categoryId" className="form-control" onChange={handleChange}>
-                  {arrProjectCategory.map((item, index) => {
+                  {arrProjectCategory?.map((item, index) => {
                      return <option key={index} value={item.id}>{item.projectCategoryName}</option>
                   })}
                </select>
@@ -81,7 +85,6 @@ function CreateProject(props) {
 const createProjectForm = withFormik({
    enableReinitialize: true, // Bắt mapPropsToValues chạy lại khi component render lại
    mapPropsToValues: (props) => {
-
       return {
          projectName: '',
          description: '',
@@ -96,10 +99,9 @@ const createProjectForm = withFormik({
 
    handleSubmit: (values, { props, setSubmitting }) => {
       props.dispatch({
-         type: 'CREATE_PROJECT_SAGA',
+         type: CREATE_PROJECT_SAGA,
          newProject: values
       })
-
 
    },
 

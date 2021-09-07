@@ -88,8 +88,8 @@
  /* Menu */
  .menu {
    height: 100vh;
-   width: 18%;
-   margin-left: 4%;
+   width: 25%;
+   /* margin-left: 4%; */
    background-color: #f4f5f7;
  }
  
@@ -157,6 +157,10 @@
    margin-bottom: 8%;
    margin-left: 7%;
    margin-right: 7%;
+ }
+ .menu .feature a{
+  color: #212529;
+  font-weight: 100;
  }
  
  .menu .feature div {
@@ -270,6 +274,55 @@
  .fa-bookmark {
    color: #5fb03e;
  }
+
+ .new.task{
+  color: rgb(79, 173, 230) !important;
+  font-weight: 600;
+ }
+
+ .bug{
+   color:#d85463 !important;
+  font-weight: 600;
+ }
+
+ .typeId2 {
+  color: rgb(79, 173, 230) !important;
+  font-weight: 600;
+ }
+ .typeId1 {
+  color: #d85463 !important;
+  font-weight: 600;
+ }
+
+
+ .statusId3{
+  color: rgb(0, 82, 204) !important;
+  font-weight: 600;
+ }
+ .statusId4{
+  color: rgb(11, 135, 91) !important;
+  font-weight: 600;
+ }
+
+ .IN.PROGRESS{
+  color: rgb(0, 82, 204) !important;
+  font-weight: 600;
+ }
+
+ .DONE{
+  color: rgb(11, 135, 91) !important;
+  font-weight: 600;
+ }
+
+
+ .BACKLOG{
+  color: #495057!important;
+ }
+
+ .SELECTED.FOR.DEVELOPMENT{
+  color: #495057!important;
+ }
+
  
  .fa-arrow-up {
    color: #d85463;
@@ -278,6 +331,8 @@
  .fa-check-square {
    color: #62a0ce;
  }
+
+ 
  
  /* Modal */
  .modal-search {
@@ -334,7 +389,8 @@
  
  /* Modal Info */
  .modal-info {
-   max-width: 1000px !important;
+   max-width: 1280px !important;
+   min-height: 100% !important;
  }
  
  .modal-info .modal-content {
@@ -399,13 +455,17 @@
    background: #dcdfe4;
    margin-bottom: 20px;
  }
+
  
  .item {
-   margin-right: 20px;
-   background: #e9eaf0;
-   padding: 5px;
-   border-radius: 5px;
-   flex-basis: 50%;
+  display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    cursor: pointer;
+    margin: 0px 10px 5px 0px;
+    padding: 4px 8px;
+    border-radius: 5px;
+    background: rgb(235, 236, 240);
  }
  
  .item .avatar img {
@@ -415,6 +475,7 @@
  
  .item .name {
    margin: 0;
+   
  }
  
  .reporter .item {
@@ -462,5 +523,26 @@
  .logged, .estimate-time{
    font-size: 14px;
  }
+
+ .timeTracking:hover{
+   cursor: pointer;
+   background: rgb(235, 236, 240)
+ }
+
+
+ /* New csss */
  
- 
+ .ant-select-selection-item-content{
+   color: rgba(0, 82, 204, 0.85);
+   font-size: 14px;
+   font-weight: 600;
+   cursor: pointer;
+ }
+
+ .user-assigned .ant-select-selector{
+   cursor: default !important;
+ }
+
+ .ant-notification{
+   z-index: 1500 !important;
+ }

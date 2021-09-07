@@ -10,7 +10,7 @@ export const ProjectCategoryReducer = (state = stateDefault, action) => {
       case GET_ALL_PROJECT_CATEGORY: {
          state.arrProjectCategory = action.data;
          return { ...state }
-      }
+      };
       default: return { ...state }
    }
 }

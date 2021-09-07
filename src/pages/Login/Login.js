@@ -5,6 +5,7 @@ import { withFormik } from 'formik';
 import * as Yup from 'yup';
 import { connect } from 'react-redux';
 import { signinJiraAction } from '../../redux/action/JiraAction';
+import { NavLink } from 'react-router-dom';
 
 function Login(props) {
 
@@ -29,8 +30,12 @@ function Login(props) {
                <Input name="password" onChange={handleChange} type="password" size="large" placeholder="password" prefix={<LockOutlined />} />
             </div>
             <div className="text-danger">{errors.password}</div>
-            <div className="w-50 mt-4">
-               <Button htmlType="submit" size="large" type="primary" style={{ backgroundColor: 'rgb(7, 71, 166)', color: '#fff' }} className="w-100">Login</Button>
+            <div className="w-50 mt-4 text-center">
+               <Button htmlType="submit" size="large" type="primary" style={{ backgroundColor: 'rgb(7, 71, 166)', color: '#fff', borderRadius: '7px' }} className="w-75">Login</Button>
+            </div>
+            <div className="w-50 mt-4 text-center">
+               <NavLink activeClassName="text-dark" activeStyle={{}} className="nav-link" to="/signup">Create an Account</NavLink>
+
             </div>
             <div className="social m-2 d-flex ">
                <Button type="default" style={{ backgroundColor: 'rgb(59,89,152)' }} className="mr-2" type="primary" shape="circle" size={"large"}>
